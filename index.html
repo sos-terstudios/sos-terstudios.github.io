@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SOS-ter Studios — Game Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 16px;
+    }
+    .shell {
+      max-width: 960px;
+      width: 100%;
+      background: rgba(15,23,42,0.9);
+      border-radius: 18px;
+      padding: 24px 24px 32px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(148,163,184,0.3);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 0.98rem;
+      color: #9ca3af;
+    }
+    .tagline {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #a5f3fc;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .card {
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 65%);
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(55,65,81,0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.12);
+      color: #7dd3fc;
+      border: 1px solid rgba(56,189,248,0.4);
+      align-self: flex-start;
+    }
+    .pill span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34,197,94,0.9);
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+    .meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .desc {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .tag {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(75,85,99,0.9);
+      color: #9ca3af;
+    }
+    .actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #22d3ee);
+      color: #020617;
+      box-shadow: 0 10px 20px rgba(34,197,94,0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(34,197,94,0.5);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.4);
+    }
+    .btn-ghost:hover {
+      background: rgba(15,23,42,0.9);
+      transform: translateY(-1px);
+    }
+    footer {
+      margin-top: 26px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    footer span {
+      color: #38bdf8;
+    }
+    @media (max-width: 640px) {
+      .shell {
+        padding: 18px 16px 24px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="tagline">SOS-TER STUDIOS · MED GAMES LAB</div>
+      <h1>Game Hub</h1>
+      <p>All the tiny chaos you and your sister build between shifts, exams, and code blues.</p>
+    </header>
+
+    <section class="grid">
+      <!-- Code Blue Runner card -->
+      <article class="card">
+        <div class="pill">
+          <span class="dot"></span>
+          Live · Web Game
+        </div>
+        <h2>Code Blue Runner 🩺🏃‍♀️</h2>
+        <div class="meta">Endless runner · On-call doctor · Pixel hospital hallway</div>
+        <p class="desc">
+          Sprint down the ward as the on-call doc, vaulting IV poles, crash carts, and rogue wet floor signs.
+          Grab coffee, N95s, and adrenaline on your way to the Code Blue.
+        </p>
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Canvas</span>
+          <span class="tag">Pixel Art</span>
+          <span class="tag">Emergency Medicine</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://sos-terstudios.github.io/codebluerunner/" target="_blank">
+            ▶ Play now
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/sos-terstudios/codebluerunner" target="_blank">
+            View code
+          </a>
+        </div>
+      </article>
+
+      <!-- BlinkCheck card -->
+      <article class="card">
+        <div class="pill">
+          <span class="dot"></span>
+          Live · Web Tool
+        </div>
+        <h2>BlinkCheck 👁️✨</h2>
+        <div class="meta">1-minute eye strain check · Mini games · Screen-time hygiene</div>
+        <p class="desc">
+          A playful eye comfort check with micro-games and break reminders. Built for med students, coders,
+          and anyone whose retina is currently 90% blue light.
+        </p>
+        <div class="tags">
+          <span class="tag">Digital Health</span>
+          <span class="tag">Front-end</span>
+          <span class="tag">Wellness</span>
+        </div>
+        <div class="actions">
+          <!-- ⬇⬇⬇ Replace this link with your real BlinkCheck URL -->
+          <a class="btn btn-primary" href="https://YOUR-BLINKCHECK-URL-HERE" target="_blank">
+            ▶ Open BlinkCheck
+          </a>
+          <!-- And this with the BlinkCheck repo if you want -->
+          <a class="btn btn-ghost" href="https://github.com/YOUR-USER/YOUR-BLINKCHECK-REPO" target="_blank">
+            View code
+          </a>
+        </div>
+      </article>
+
+      <!-- Future game placeholder -->
+      <article class="card">
+        <div class="pill">
+          <span class="dot"></span>
+          In Development
+        </div>
+        <h2>Next Game: ??? 🧠</h2>
+        <div class="meta">Coming soon · Another unhinged med game</div>
+        <p class="desc">
+          A work-in-progress slot for your next idea — neuro, path, birds doing triage, who knows.
+          Link it here once it’s live.
+        </p>
+        <div class="tags">
+          <span class="tag">WIP</span>
+          <span class="tag">Prototype</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-ghost" href="https://github.com/sos-terstudios" target="_blank">
+            See all projects
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      A <span>SOS-ter Studios</span> side quest. Built by Dr. Pranati &amp; Dr. Pranavi Kilaru.
+    </footer>
+  </main>
+</body>
+</html>
